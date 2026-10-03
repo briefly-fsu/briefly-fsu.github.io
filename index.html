@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101619">
+  <title>Dr. Ahh Testosterone Tumble</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <main>
+    <section id="title-screen" class="screen title-screen" aria-labelledby="splash-title">
+      <div class="title-grain" aria-hidden="true"></div>
+      <div class="title-art" aria-hidden="true">
+        <span class="title-orbit orbit-one"></span>
+        <span class="title-orbit orbit-two"></span>
+        <span class="title-cross cross-one">+</span>
+        <span class="title-cross cross-two">+</span>
+        <span class="title-stamp">EST. 1989<br>LAB 04</span>
+      </div>
+      <div class="title-content">
+        <p class="eyebrow"><span class="status-dot"></span> The grand experiment begins</p>
+        <div class="title-logo">
+          <span class="logo-kicker">Dr. Ahh presents</span>
+          <h1 id="splash-title"><span>TESTOSTERONE</span><strong>TUMBLE</strong></h1>
+          <span class="logo-foot">A falling-block formula for the ages</span>
+        </div>
+        <button id="start-btn" class="start-button" type="button">
+          <span>Enter the lab</span><span class="button-arrow" aria-hidden="true">&#8594;</span>
+        </button>
+        <p class="title-hint">A classic block-stacking experiment</p>
+      </div>
+      <div class="title-footer"><span>VOL. 01</span><span>HANDLE WITH FOCUS</span><span>10 &#215; 20</span></div>
+    </section>
+
+    <section id="game-screen" class="screen game-screen is-hidden" aria-label="Tetris gameplay">
+      <div class="game-backdrop" aria-hidden="true">
+        <div class="backdrop-grid"></div>
+        <div class="backdrop-beam beam-one"></div>
+        <div class="backdrop-beam beam-two"></div>
+        <div class="backdrop-scanline"></div>
+      </div>
+      <header class="game-header">
+        <button class="wordmark" id="home-btn" type="button" aria-label="Return to title screen">
+          <span class="wordmark-mark">DA</span>
+          <span>DR. AHH <b>LAB 04</b></span>
+        </button>
+        <div class="header-center"><span class="live-indicator"></span> EXPERIMENT IN PROGRESS</div>
+        <button id="pause-btn" class="icon-button" type="button" aria-label="Pause game" title="Pause (P)">
+          <span class="pause-glyph" aria-hidden="true">&#9646;&#9646;</span>
+        </button>
+      </header>
+
+      <div class="game-layout">
+        <aside class="game-rail left-rail" aria-label="Game information">
+          <div class="rail-label">SESSION</div>
+          <div class="stat-block">
+            <span class="stat-label">SCORE</span>
+            <strong id="score-value">000000</strong>
+          </div>
+          <div class="stat-block">
+            <span class="stat-label">LINES</span>
+            <strong id="lines-value">00</strong>
+          </div>
+          <div class="stat-block">
+            <span class="stat-label">LEVEL</span>
+            <strong id="level-value">01</strong>
+          </div>
+          <div class="rail-note"><span class="note-rule"></span>Stack with care.<br>Observe the pattern.</div>
+        </aside>
+
+        <section class="board-wrap" aria-label="Game board">
+          <div class="board-topline"><span>SPECIMEN A</span><span id="game-status">LIVE</span></div>
+          <div class="board-frame">
+            <canvas id="game-board" width="300" height="600" aria-label="Tetris board"></canvas>
+            <div id="game-overlay" class="game-overlay is-hidden" role="status">
+              <span class="overlay-kicker">LAB STATUS</span>
+              <strong id="overlay-title">PAUSED</strong>
+              <span id="overlay-copy">Press P or resume to continue</span>
+              <button id="overlay-action" class="overlay-button" type="button">Resume</button>
+            </div>
+          </div>
+          <div class="board-bottomline"><span>10 COLUMNS</span><span>20 ROWS</span></div>
+        </section>
+
+        <aside class="game-rail right-rail" aria-label="Next piece and controls">
+          <div class="rail-label">UP NEXT</div>
+          <div class="next-frame"><canvas id="next-board" width="120" height="96" aria-label="Next Tetris piece"></canvas></div>
+          <div class="rail-label controls-label">CONTROLS</div>
+          <div class="control-list">
+            <div><kbd>&#8592;</kbd><kbd>&#8594;</kbd><span>Move</span></div>
+            <div><kbd>&#8593;</kbd><span>Rotate</span></div>
+            <div><kbd>&#8595;</kbd><span>Soft drop</span></div>
+            <div><kbd>SPACE</kbd><span>Hard drop</span></div>
+            <div><kbd>P</kbd><span>Pause</span></div>
+          </div>
+          <button id="restart-btn" class="restart-button" type="button"><span aria-hidden="true">&#8635;</span> Restart run</button>
+        </aside>
+      </div>
+      <footer class="game-footer"><span>DR. AHH TESTOSTERONE TUMBLE</span><span>KEEP YOUR STACK IN CHECK</span></footer>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
